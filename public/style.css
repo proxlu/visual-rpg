@@ -208,6 +208,7 @@ body {
 
 /* Estilos para a mensagem */
 .message img {
+    object-fit: cover;
     flex-shrink: 0;
     width: 38px;
     height: 38px;
