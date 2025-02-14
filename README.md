@@ -2,7 +2,7 @@
 Chat em desenvolvimento para jogar RPGs baseados em texto.
 https://93.189.91.101:8443
 
-![2025-02-13-215140_798x651_scrot](2025-02-14-072124_801x652_scrot.png)
+![2025-02-13-215140_798x651_scrot](2025-02-14-142956_799x652_scrot.png)
 
 ## Instalação e inicialização
 1. Abra um terminal e cole os seguintes comandos:
