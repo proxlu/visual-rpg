@@ -1,6 +1,6 @@
 # visual-rpg
 Chat em desenvolvimento para jogar RPGs baseados em texto.
-https://93.189.91.101:8080
+https://93.189.91.101:8443
 
 ![2025-02-13-215140_798x651_scrot](2025-02-13-215140_798x651_scrot.png)
 
