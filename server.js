@@ -32,8 +32,8 @@ io.on('connection', (socket) => {
         return;
     }
         // Define o nome como "Anônimo" se estiver vazio ou sistema
+	username = username.toLowerCase() === 'sistema' ? 'Anônimo' : username;
         username = username.trim() || 'Anônimo';
-	username = username.toLowerCase() === 'sistema' || 'Anônimo';
 
         // Verifica se a imagem é um GIF (base64 ou URL) e remove
         if (photo && (photo.match(/\.(gif)$/i) || photo.startsWith('data:image/gif'))) {
