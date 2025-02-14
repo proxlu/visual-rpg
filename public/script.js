@@ -31,9 +31,9 @@ loginButton.addEventListener('click', () => {
         if (file) {
             // Verifica se o arquivo é um GIF
             if (file.type === "image/gif") {
-                photo = 'https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png'; // Define como null ou undefined para indicar que não há foto válida
+                photo = 'GitHub-Mark-ea2971cee799.png'; // Define como null ou undefined para indicar que não há foto válida
             } else if (file.size > 5 * 1024 * 1024) { // 5 MB
-                photo = 'https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png'; // Remove a imagem
+                photo = 'GitHub-Mark-ea2971cee799.png'; // Remove a imagem
             } else {
                 const reader = new FileReader();
                 reader.onload = (e) => {
@@ -45,7 +45,7 @@ loginButton.addEventListener('click', () => {
                 return; // Impede o envio imediato até a foto ser carregada
             }
         } else {
-            photo = 'https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png'; // Se não houver arquivo de foto, define como null ou undefined
+            photo = 'GitHub-Mark-ea2971cee799.png'; // Se não houver arquivo de foto, define como null ou undefined
         }
         
         // Emitir o evento do socket após o tratamento da foto
