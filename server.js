@@ -36,9 +36,9 @@ io.on('connection', (socket) => {
 
         // Verifica se a imagem é um GIF (base64 ou URL) e remove
         if (photo && (photo.match(/\.(gif)$/i) || photo.startsWith('data:image/gif'))) {
-            photo = 'https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png'; // Remove a imagem GIF, mas permite a entrada
+            photo = 'GitHub-Mark-ea2971cee799.png'; // Remove a imagem GIF, mas permite a entrada
         } else if (photo.length > 5 * 1024 * 1024) { // 5 MB (para base64)
-            photo = 'https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png'; // Remove a imagem
+            photo = 'GitHub-Mark-ea2971cee799.png'; // Remove a imagem
 	}
         users[socket.id] = { username, photo };
         io.emit('updateUsers', users);
