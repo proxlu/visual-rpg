@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual RPG</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="chat-container">
+        <!-- Controle de fundo -->
+        <div id="background-control">
+            <input type="text" id="background-image-url" placeholder="URL da imagem de fundo">
+            <button id="change-background-button">Mudar cenário</button>
+        </div>
+
+        <!-- Área de mensagens -->
+        <div id="chat-messages"></div>
+
+        <!-- Campo de digitação e botão de enviar -->
+        <div id="input-container">
+            <input type="text" id="message-input" placeholder="Digite sua mensagem, /roll [2-100] ou /system [mensagem]...">
+            <button id="send-button">Enviar</button>
+        </div>
+    </div>
+
+    <!-- Modal de login -->
+    <div id="login-modal">
+        <h2>Visual RPG</h2>
+        <input type="text" id="username-input" placeholder="Nome do personagem">
+        <input type="file" id="photo-input" accept="image/*">
+        <button id="login-button">Entrar</button>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

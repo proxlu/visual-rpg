@@ -1,0 +1,242 @@
+/* Estilos gerais para o tema escuro */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #1e1e1e; /* Fundo escuro */
+    color: #e0e0e0; /* Texto claro */
+}
+
+/* Container do chat */
+#chat-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #2d2d2d;
+    margin: 0 auto; /* Centraliza o container */
+    padding: 20px;
+    max-width: 800px; /* Largura máxima do chat */
+    width: 100%; /* Ocupa 100% da largura disponível */
+    box-sizing: border-box; /* Garante que o padding não ultrapasse a largura */
+}
+
+#chat-messages {
+    flex: 1;
+    overflow-y: auto; /* Habilita a barra de rolagem vertical */
+    overflow-x: auto;
+    max-height: calc(100vh - 156px); /* Altura máxima (ajuste o valor conforme necessário) */
+    border: 1px solid #444;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    background-color: #3d3d3d;
+}
+
+/* Controle de fundo */
+#background-control {
+    display: flex;
+    gap: 10px; /* Mesmo espaçamento do campo de digitação e botão de enviar */
+    align-items: center;
+    margin-bottom: 10px; /* Espaço entre o controle de fundo e as mensagens */
+    width: 100%; /* Ocupa 100% da largura do container */
+}
+
+#background-control input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #3d3d3d;
+    color: #e0e0e0;
+    box-sizing: border-box; /* Garante que o padding não ultrapasse a largura */
+}
+
+#background-control button {
+    padding: 10px 20px;
+    background-color: #555; /* Botão em tons de cinza */
+    color: #e0e0e0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    white-space: nowrap; /* Impede que o texto do botão quebre em duas linhas */
+    box-sizing: border-box; /* Garante que o padding não ultrapasse a largura */
+}
+
+#background-control button:hover {
+    background-color: #666; /* Tom de cinza mais claro ao passar o mouse */
+}
+
+/* Estilo para o container da mensagem */
+.message {
+    position: relative; /* Permite posicionar o nome absolutamente dentro deste container */
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+/* Estilo para o nome do usuário */
+.message-username {
+    font-weight: bold;
+    color: #808080; /* Cor do nome do usuário */
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+    position: absolute; /* Posiciona o nome absolutamente */
+    top: -20px; /* Move o nome para cima do balão */
+    left: -6px; /* Ajusta a posição horizontal (depende da foto) */
+    z-index: 1; /* Garante que o nome fique acima do balão */
+    padding: 0 5px; /* Espaçamento interno para o nome */
+}
+
+/* Balão de mensagem */
+.message-bubble {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #EEE; /* Fundo do balão */
+    color: #111; /* Texto claro */
+    position: relative;
+}
+
+/* Seta do balão de mensagem */
+.message-bubble::after {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 10px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid #EEE; /* Cor da seta */
+}
+
+/* Estilo para mensagens do sistema */
+.message-bubble.system-message {
+    background-color: #222; /* Fundo escuro */
+    color: #DDD; /* Texto claro */
+}
+
+.message-bubble.system-message::after {
+    border-right-color: transparent; /* Cor da seta */
+}
+
+/* Campo de entrada de mensagem */
+#message-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #3d3d3d;
+    color: #e0e0e0;
+    margin-bottom: 0;
+    box-sizing: border-box; /* Garante que o padding não ultrapasse a largura */
+}
+
+#message-input:focus {
+    border-color: #666; /* Cor de foco em tons de cinza */
+    outline: none;
+}
+
+/* Botão de enviar */
+#send-button {
+    padding: 10px 20px;
+    background-color: #555; /* Botão em tons de cinza */
+    color: #e0e0e0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    white-space: nowrap; /* Impede que o texto do botão quebre em duas linhas */
+    box-sizing: border-box; /* Garante que o padding não ultrapasse a largura */
+}
+
+#send-button:hover {
+    background-color: #666; /* Tom de cinza mais claro ao passar o mouse */
+}
+
+/* Container de entrada (campo de digitação + botão de enviar) */
+#input-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+}
+
+/* Modal de login */
+#login-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #2d2d2d;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    color: #e0e0e0;
+    width: 300px; /* Largura fixa para o modal */
+}
+
+#login-modal input {
+    width: calc(100% - 22px); /* Ajuste para o padding */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #3d3d3d;
+    color: #e0e0e0;
+}
+
+#login-modal button {
+    width: 100%;
+    padding: 10px;
+    background-color: #555; /* Botão em tons de cinza */
+    color: #e0e0e0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#login-modal button:hover {
+    background-color: #666; /* Tom de cinza mais claro ao passar o mouse */
+}
+
+/* Estilos para a mensagem */
+.message img {
+    flex-shrink: 0;
+    width: 38px;
+    height: 38px;
+    margin-right: 15px;
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 600px) {
+    #background-control {
+        flex-direction: row; /* Mantém os elementos lado a lado */
+    }
+
+    #background-control input {
+        width: 70%; /* Ocupa 70% da largura */
+    }
+
+    #background-control button {
+        width: 30%; /* Ocupa 30% da largura */
+    }
+
+    #input-container {
+        flex-direction: row; /* Mantém o campo de digitação e o botão de enviar lado a lado */
+    }
+
+    #message-input {
+        width: 70%; /* Ocupa 70% da largura */
+    }
+
+    #send-button {
+        width: 30%; /* Ocupa 30% da largura */
+    }
+}
