@@ -28,7 +28,7 @@ io.on('connection', (socket) => {
     // Valida o tamanho do username
     if (username.length > 50) {
         username = 'Anônimo'; // Define como "Anônimo"
-        socket.emit('error', 'Nome de usuário não pode exceder 20 caracteres.');
+        socket.emit('error', 'Nome de usuário não pode exceder 50 caracteres.');
         return;
     }
         // Define o nome como "Anônimo" se estiver vazio ou sistema
