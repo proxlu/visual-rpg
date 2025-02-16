@@ -2,9 +2,20 @@ const express = require('express');
 const http = require('http');
 const socketIo = require('socket.io');
 const path = require('path');
-
+const https = require('https');
+const fs = require('fs');
 const app = express();
+
+// Carregar o certificado e a chave privada
+const options = {
+    key: fs.readFileSync('arquivo.key'), // Substitua pelo caminho da sua chave privada
+    cert: fs.readFileSync('arquivo.crt')   // Substitua pelo caminho do seu certificado
+};
+
+// Escolha entre https e http aqui
+//const server = https.createServer(options, app);
 const server = http.createServer(app);
+
 const io = socketIo(server, {
     maxHttpBufferSize: 5 * 1024 * 1024, // Limite de 5 MB para dados recebidos
 });
